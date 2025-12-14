@@ -20,4 +20,8 @@ class Book extends Model
     return $this->hasOne(Category::class);
 }
 
+ public function user()
+    {
+        $this->belongsToMany(User::class);
+}
 }
