@@ -13,4 +13,5 @@ class OrderItem extends Model
     'price',
     
     ];
+    
 }

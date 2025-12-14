@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models\Category;
 class Book extends Model
 {
      protected $fillable = [
@@ -14,4 +14,10 @@ class Book extends Model
     'ISBN',
     'category_id',
     ];
+
+    public function category()
+{
+    return $this->hasOne(Category::class);
+}
+
 }
