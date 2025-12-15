@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Author\BookController;
-
+use App\Http\Controllers\AuthController;
 
 
 Route::prefix('authors/{author_id}')->group(function () {
@@ -14,4 +14,9 @@ Route::prefix('authors/{author_id}')->group(function () {
     Route::delete('books/{book_id}', [BookController::class, 'destroy']);
 });
 
+Route::get('/user', function (Request $request) {
+    return $request->user();
+})->middleware('auth:sanctum');
+
+Route::post('/login',[AuthController::class,'login']);
 
